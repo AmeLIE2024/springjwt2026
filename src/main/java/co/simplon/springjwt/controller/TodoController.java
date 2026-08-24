@@ -25,7 +25,7 @@ public class TodoController {
     }
 
     // Accessible par ROLE_USER et ROLE_ADMIN
-    @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
+    @PreAuthorize("hasAnyRole('SCOPE_ROLE_USER', 'SCOPE_ROLE_ADMIN')")
     @GetMapping("")
     public List<TodoEntity> getAll() {
         return this.todoRepository.findAll();
